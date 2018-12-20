@@ -1,0 +1,6 @@
+framework module Pods_Cilmate {
+  umbrella header "Pods-Cilmate-umbrella.h"
+
+  export *
+  module * { export * }
+}

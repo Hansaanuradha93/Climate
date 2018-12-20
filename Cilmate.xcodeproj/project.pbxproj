@@ -12,9 +12,11 @@
 		47E6F4B121CB4E2A00AD41DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E6F4AF21CB4E2A00AD41DD /* Main.storyboard */; };
 		47E6F4B321CB4E2B00AD41DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47E6F4B221CB4E2B00AD41DD /* Assets.xcassets */; };
 		47E6F4B621CB4E2B00AD41DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E6F4B421CB4E2B00AD41DD /* LaunchScreen.storyboard */; };
+		7AEA27CAE7FCA8F43FE5FC6B /* Pods_Cilmate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F75B1BE757B78019CE7B3F8 /* Pods_Cilmate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F75B1BE757B78019CE7B3F8 /* Pods_Cilmate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cilmate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E6F4A821CB4E2A00AD41DD /* Cilmate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cilmate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E6F4AB21CB4E2A00AD41DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47E6F4AD21CB4E2A00AD41DD /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		47E6F4B221CB4E2B00AD41DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47E6F4B521CB4E2B00AD41DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47E6F4B721CB4E2B00AD41DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A514BFC1BF8CA98C5CCC7A3 /* Pods-Cilmate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cilmate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cilmate/Pods-Cilmate.debug.xcconfig"; sourceTree = "<group>"; };
+		E6888720B2A5184FE5F4F079 /* Pods-Cilmate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cilmate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cilmate/Pods-Cilmate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AEA27CAE7FCA8F43FE5FC6B /* Pods_Cilmate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181F39A0781269C8CC9588C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F75B1BE757B78019CE7B3F8 /* Pods_Cilmate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		47E6F49F21CB4E2A00AD41DD = {
 			isa = PBXGroup;
 			children = (
 				47E6F4AA21CB4E2A00AD41DD /* Cilmate */,
 				47E6F4A921CB4E2A00AD41DD /* Products */,
+				64AA5EF8FCD637098AF2035E /* Pods */,
+				181F39A0781269C8CC9588C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +111,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		64AA5EF8FCD637098AF2035E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A514BFC1BF8CA98C5CCC7A3 /* Pods-Cilmate.debug.xcconfig */,
+				E6888720B2A5184FE5F4F079 /* Pods-Cilmate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47E6F4BA21CB4E2B00AD41DD /* Build configuration list for PBXNativeTarget "Cilmate" */;
 			buildPhases = (
+				86EED9093543EB4FC0F41423 /* [CP] Check Pods Manifest.lock */,
 				47E6F4A421CB4E2A00AD41DD /* Sources */,
 				47E6F4A521CB4E2A00AD41DD /* Frameworks */,
 				47E6F4A621CB4E2A00AD41DD /* Resources */,
+				8B4772E2E5BF41CD7D51440B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +187,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		86EED9093543EB4FC0F41423 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cilmate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B4772E2E5BF41CD7D51440B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Cilmate/Pods-Cilmate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cilmate/Pods-Cilmate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		47E6F4A421CB4E2A00AD41DD /* Sources */ = {
@@ -312,6 +389,7 @@
 		};
 		47E6F4BB21CB4E2B00AD41DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A514BFC1BF8CA98C5CCC7A3 /* Pods-Cilmate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -330,6 +408,7 @@
 		};
 		47E6F4BC21CB4E2B00AD41DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6888720B2A5184FE5F4F079 /* Pods-Cilmate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
