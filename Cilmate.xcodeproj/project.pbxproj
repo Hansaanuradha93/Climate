@@ -12,6 +12,7 @@
 		47E6F4B121CB4E2A00AD41DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E6F4AF21CB4E2A00AD41DD /* Main.storyboard */; };
 		47E6F4B321CB4E2B00AD41DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47E6F4B221CB4E2B00AD41DD /* Assets.xcassets */; };
 		47E6F4B621CB4E2B00AD41DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E6F4B421CB4E2B00AD41DD /* LaunchScreen.storyboard */; };
+		47FC8A0021CCD0990012AAD5 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FC89FF21CCD0990012AAD5 /* WeatherDataModel.swift */; };
 		7AEA27CAE7FCA8F43FE5FC6B /* Pods_Cilmate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F75B1BE757B78019CE7B3F8 /* Pods_Cilmate.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		47E6F4B221CB4E2B00AD41DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47E6F4B521CB4E2B00AD41DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47E6F4B721CB4E2B00AD41DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47FC89FF21CCD0990012AAD5 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		6A514BFC1BF8CA98C5CCC7A3 /* Pods-Cilmate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cilmate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cilmate/Pods-Cilmate.debug.xcconfig"; sourceTree = "<group>"; };
 		E6888720B2A5184FE5F4F079 /* Pods-Cilmate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cilmate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cilmate/Pods-Cilmate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 		47E6F4BD21CB4E5100AD41DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				47FC89FF21CCD0990012AAD5 /* WeatherDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			files = (
 				47E6F4AE21CB4E2A00AD41DD /* WeatherViewController.swift in Sources */,
 				47E6F4AC21CB4E2A00AD41DD /* AppDelegate.swift in Sources */,
+				47FC8A0021CCD0990012AAD5 /* WeatherDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
