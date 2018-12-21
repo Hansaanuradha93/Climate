@@ -11,7 +11,8 @@ import CoreLocation
 import Alamofire
 import SwiftyJSON
 
-class WeatherViewController: UIViewController, CLLocationManagerDelegate {
+// CLLocationManagerDelegate and ChangeCityDelegate are protocols that WeatherViewController have to conform
+class WeatherViewController: UIViewController, CLLocationManagerDelegate, ChangeCityDelegate {
 
     // Constants
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
@@ -31,16 +32,16 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Set up the location manager here
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.delegate = self  // Set the delegate so when the location manager finish fetching the location data, it will send those to the delegate which is the WeatherViewController in this situation
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters // Set the desired accuracy, always select the most relevent one since this process is so power consuming when the accuracy gets higher
         locationManager.requestWhenInUseAuthorization() // Request Permission from User
         locationManager.startUpdatingLocation() // Start updating GPS location
     }
     
-    //  Location Manager Delegate Methods
+    //Mark: -   Location Manager Delegate Methods
     /*********************************************************************************************************************************************/
     
-    // didUpdateLocations method - Tells the deligate that new location data is available
+    // didUpdateLocations method - When the location manager has new location data it will trigger this method to tell the deligate that new location data is available
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]   // Get the last location of the locations array which is the most accurate one
         // Check whether the location is valid
@@ -67,7 +68,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         cityLabel.text = "Location Unavailable" // Tells the User that the location is unavailable
     }
     
-    //  Networking
+    //Mark: -   Networking
     /*********************************************************************************************************************************************/
 
     // getWeather method - Fetch weather infromation from the web service
@@ -94,7 +95,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    //  JSON Parsing
+    //Mark: -   JSON Parsing
     /*********************************************************************************************************************************************/
     
     // updateWeatherData method - Parse JSON data then update UI
@@ -121,7 +122,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    //  UI Update
+    //Mark: -   UI Update
     /*********************************************************************************************************************************************/
 
     // updateUIWithWeatherData method - Update the UI with weather data
@@ -133,5 +134,24 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    
+    //Mark: -  Change City Deligate methods
+    /*********************************************************************************************************************************************/
+
+    // userEnterdANewCityName method -
+    func userEnteredANewCityName(city: String) {
+        print(city) // print the city name here
+    }
+    
+    // prepareForSegue method - Will trigger this method, when user is navigated to the next screen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "changeCityName" { // Checks the segue identifier
+            
+            // Create a object with the type of ChangeCityViewController
+            let destinationViewController = segue.destination as! ChangeCityViewController
+            // Set the destinationViewController's delegate as WeatherViewController
+            destinationViewController.delegate = self
+        }
+    }
 }
 
