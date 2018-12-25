@@ -54,6 +54,3 @@ class ChangeCityViewController: UIViewController {
 
 }
 
-//79.958256
-//
-//6.817102

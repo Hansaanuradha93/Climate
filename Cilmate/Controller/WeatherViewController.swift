@@ -11,7 +11,7 @@ import CoreLocation
 import Alamofire
 import SwiftyJSON
 
-// CLLocationManagerDelegate and ChangeCityDelegate are protocols that WeatherViewController have to conform
+//  ChangeCityDelegate is a protocol that WeatherViewController have to conform
 class WeatherViewController: UIViewController, CLLocationManagerDelegate, ChangeCityDelegate {
 
     // Constants
@@ -56,7 +56,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
             // Create a dictionaty with latitude, longitude and app id
             let params : [String : String] = ["lat" : latitude, "lon" : longitude, "appid" : APP_ID]
             
-            // Get weather data from the Web Server
+            // Get weather data from the Web Service
             getWeatherData(url : WEATHER_URL, parameters : params)
         }
     }
@@ -108,12 +108,12 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
         
         weatherDataModel.city = json["name"].stringValue // Capture the name from the json, convert it into String from type JSON, then store it in weatherDataModel object
         
-        weatherDataModel.condition = json["weather"][0]["id"].intValue
+        weatherDataModel.condition = json["weather"][0]["id"].intValue // Capture the weather condition id and convert into a integer
         
         weatherDataModel.weatherIconName = weatherDataModel.updateWeatherIcon(condition: weatherDataModel.condition) // Store the weather condition icon name in weatherDataModel object
             
-            // Update the UI with weather data
-            updateUIWithWeatherData()
+        // Update the UI with weather data
+        updateUIWithWeatherData()
             
         } else {
             cityLabel.text = "Weather Unavailable"
@@ -141,6 +141,11 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     // userEnterdANewCityName method -
     func userEnteredANewCityName(city: String) {
         print(city) // print the city name here
+        
+        let params : [String : String] = ["q" : city, "appid" : APP_ID] // Create a dictionary with required parameters by the OpenWeather Map servic
+        
+        // Get weather data from the Web Service
+        getWeatherData(url: WEATHER_URL, parameters: params)
     }
     
     // prepareForSegue method - Will trigger this method, when user is navigated to the next screen
